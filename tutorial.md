@@ -49,3 +49,24 @@ Ordered
 
 [Bell Lab](https://bellecolenglab.wixsite.com/eastcarolina)
 
+## BACKSLASH ESCAPES
+
+
+\*Literal asterisks\*
+
+##FENCED IN CODE BLOCKS
+
+```
+echo "hello"
+```
+
+Phyton Example:
+```Python
+Print("hello")
+```
+
+R Example:
+```r
+x <- 4^2
+```
+
