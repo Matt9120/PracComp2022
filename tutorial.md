@@ -77,3 +77,10 @@ x <- 4^2
 - [x] @mentions, #references, [links](), **formatting**, and <del>tags<\del>
 - [x] [Bell Lab](https://bellecolenglab.wixsite.com/eastcarolina)
 - [x] List syntax required (and unordered or ordered list supported)
+
+##Tables 
+First header | Second Header
+-----------  | -------------
+Content Cell 1 | Content Cell 2
+Content Column 1 | Content column 2
+
