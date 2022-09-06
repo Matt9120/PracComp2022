@@ -84,3 +84,9 @@ First header | Second Header
 Content Cell 1 | Content Cell 2
 Content Column 1 | Content column 2
 
+##emoji 
+:spider:
+:+1:
+:dollar sign:
+:$:
+
