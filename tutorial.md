@@ -70,3 +70,10 @@ R Example:
 x <- 4^2
 ```
 
+## Task List
+
+- [] this is an incomplete item 
+-[x] this is a complete item 
+- [x] @mentions, #references, [links](), **formatting**, and <del>tags<\del>
+- [x] [Bell Lab](https://bellecolenglab.wixsite.com/eastcarolina)
+- [x] List syntax required (and unordered or ordered list supported)
