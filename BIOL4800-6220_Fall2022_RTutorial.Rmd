@@ -1,0 +1,349 @@
+---
+title: "BIOL6220_Fall2022_RTutorial"
+output:
+  html_document:
+    df_print: paged
+---
+
+# R Basic
+
+## Introduction
+
+R as a calculator 
+```{r}
+1 + 100
+```
+
+```{r}
+2^2
+```
+
+```{r}
+4-1
+```
+
+```{r}
+2*2
+```
+
+```{r}
+3+5*2
+```
+
+```{r}
+(3+5)*2
+```
+
+```{r}
+2e2
+```
+
+```{r}
+2/10000
+```
+
+```{r}
+log(1)
+```
+
+```{r}
+exp(0)
+```
+
+```{r}
+1 == 1
+```
+
+```{r}
+1 >= 1
+1 < 1
+```
+
+```{r}
+x <- 10
+x + x
+```
+
+```{r}
+y <- x+x
+y
+```
+
+### Vectorization
+
+```{r}
+1:5
+```
+
+```{r}
+2^(1:5)
+```
+
+```{r}
+v <- 1:5
+2^v
+```
+```{r}
+log10(v)
+```
+
+### Environment 
+
+```{r}
+ls()
+```
+
+```{r}
+rm(v)
+```
+
+```{r}
+ls()
+```
+
+## Package Management 
+
+```{r}
+installed.packages()
+```
+
+```{r}
+#install.packages("vegan", dependencies=TRUE)
+```
+```{r}
+library(vegan)
+```
+
+```{r}
+#remove.packages("vegan")
+```
+
+##Project Management 
+
+1. Set up management structure (i.e., "data", "src", "results", and "doc")
+2. Discuss avoiding redundancy of files
+3. Make sure to use version control
+
+##Getting Help
+
+```{r}
+?plot
+```
+```{r}
+help(plot)
+```
+
+```{r}
+vignette("FAQ-vegan")
+```
+
+```{r}
+citation("vegan")
+```
+
+##Data and their formats
+
+```{r}
+cats <- data.frame(coat =c("calico", "black", "tabby"),
+                   weight = c(2.1, 5, 3.2), 
+                   likes_string = c(1, 0, 1))
+```
+```{r}
+cats
+```
+
+```{r}
+write.csv(cats, file = "./data/cats.csv")
+```
+```{r}
+cats <- read.csv("./data/cats.")
+```
+
+```{r}
+cats$coat
+```
+
+```{r}
+log(cats$weight)
+```
+
+```{r}
+logweight <- log(cats$weight)
+cbind(cats, logweight)
+```
+
+```{r}
+cats <- cbind(cats, logweight)
+```
+
+
+```{r}
+paste("My cat is", cats$coat, ", and it weighs", cats$weight, "kg.", sep="")
+```
+
+### Data Types
+
+```{r}
+typeof(cats$coat)
+```
+
+```{r}
+typeof(cats$weight)
+```
+
+```{r}
+typeof(cats$likes_string)
+```
+
+```{r}
+typeof(3.14159)
+```
+
+```{r}
+typeof("FALSE")
+```
+```{r}
+typeof(T)
+typeof(F)
+```
+
+```{r}
+typeof(cats)
+```
+
+```{r}
+file.show("./data/cats.csv")
+```
+
+```{r}
+cats$likes_string <- as.logical(cats$like_string)
+typeof(cats$likes_string)
+```
+
+```{r}
+c("a", "b")
+```
+
+```{r}
+ab <- c("a", "b")
+ab
+```
+
+```{r}
+c(ab, "c")
+```
+
+```{r}
+1:10
+```
+
+```{r}
+seq(10)
+```
+
+```{r}
+z <- seq(10)
+head(z, n=3)
+```
+
+```{r}
+class(z)
+```
+
+```{r}
+typeof(z)
+```
+
+```{r}
+seq(1,100, by=5)
+```
+
+### Data Frames 
+
+```{r}
+cats
+```
+
+```{r}
+str(cats$coat)
+```
+
+```{r}
+coats <- c("tabby", "tortoiseshell", "tortoiseshell", "black", "tabby")
+coats
+```
+
+```{r}
+str(coats)
+```
+
+```{r}
+factor(coats)
+```
+
+```{r}
+categories <- factor(coats)
+class(coats)
+class(categories)
+```
+
+```{r}
+str(categories)
+```
+
+### Lists
+
+```{r}
+list_example <-list(title="numbers", numbers=1:10, data=TRUE)
+```
+
+```{r}
+list_example
+```
+
+```{r}
+another_list <- list(1, "a", TRUE, 1+1i)
+another_list
+```
+
+```{r}
+typeof(list_example)
+class(list_example)
+```
+
+```{r}
+typeof(cats)
+class(cats)
+```
+
+```{r}
+data.frame(list_example)
+```
+
+```{r}
+cats
+
+```
+
+```{r}
+cats[,3]
+```
+
+```{r}
+cats[2:3, c(1,3)]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
