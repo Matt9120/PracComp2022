@@ -1,0 +1,103 @@
+```{r}
+gucplant<-read.csv("~/Desktop/Practical Computing /PracCompFinal/MTB_GUC_Plant Measurements_PracComp.csv", header = TRUE)
+gucplant
+```
+
+```{r}
+gucplant.Aseries<-as.data.frame(read.csv("~/Desktop/Practical Computing /PracCompFinal/MTB_GUC_Plant Measurements_PracComp-BREWER.csv", header=TRUE))
+#install.packages(car)
+#library(car)
+```
+
+```{r}
+#install.packages(c("ggplot2", "ggpubr", "tidyverse", "broom", "AICcmodavg"))
+gucplant.Aseries
+```
+
+
+```{r}
+#install.packages("ggplot2")
+```
+
+```{r}
+library(hrbrthemes)
+library(ggplot2)
+
+ggplot(data=gucplant.Aseries, aes(x=Shoot.Length, y=Root.Length)) +
+  geom_point(color="Red", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  ggtitle("Tank Root Growth for Session 1")
+```
+
+
+```{r}
+boxplot(gucplant.Aseries$Root.Length ~ gucplant.Aseries$Species)
+```
+
+```{r}
+boxplot(gucplant.Aseries$Root.Length ~ gucplant.Aseries$Species)
+```
+
+
+```{r}
+plot(gucplant.Aseries$Root.Length ~ gucplant.Aseries$Shoot.Length, col=factor(gucplant.Aseries$Species))
+
+Juncus <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Juncus "), ]
+Panicum <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Panicum"), ]
+Pontederia <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Pontederia"), ]
+
+Juncus.reg <- lm(Juncus$Root.Length ~ Juncus$Shoot.Length)
+Panicum.reg <- lm(Panicum$Root.Length ~ Panicum$Shoot.Length)
+Pontederia.reg <- lm(Pontederia$Root.Length ~ Pontederia$Shoot.Length)
+
+abline(Juncus.reg, col="green")
+abline(Panicum.reg, col="red", lty=2)
+abline(Pontederia.reg, col="blue", lty=3)
+```
+
+```{r}
+gucplant.Aseries.ANOVA <- aov(gucplant.Aseries$Shoot.Length ~ gucplant.Aseries$Species)
+summary(gucplant.Aseries.ANOVA)
+```
+
+```{r}
+TukeyHSD(gucplant.Aseries.ANOVA)
+```
+
+```{r}
+library(ggstatsplot)
+library(tidyverse)
+
+plt <- ggbetweenstats(
+  data = gucplant.Aseries,
+  x = Species,
+  y = Root.Length
+)
+
+plt
+```
+
+```{r}
+plt2 <- ggbetweenstats(
+  data = gucplant.Aseries,
+  x = Species,
+  y = Shoot.Length
+)
+
+plt2
+```
+
+```{r}
+ggplot(data = gucplant.Aseries, mapping = aes())
+```
+
+
+
+
+
+
+
+
+
+
+
