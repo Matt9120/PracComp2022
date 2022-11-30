@@ -23,12 +23,22 @@ gucplant.Aseries
 library(hrbrthemes)
 library(ggplot2)
 
-ggplot(data=gucplant.Aseries, aes(x=Shoot.Length, y=Root.Length)) +
+gucplant.Aseries.SL<-ggplot(data=gucplant.Aseries, aes(x=gucplant.Aseries$Tank, y=Shoot.Length)) +
   geom_point(color="Red", linewidth=2, alpha=0.9) +
   theme_ipsum() +
-  ggtitle("Root Length by Shoot Length Session 1")
+  ggtitle("Shoot Length for All Tanks")
+gucplant.Aseries.SL + theme(axis.text.x = element_text(size=8))
+gucplant.Aseries.SL
 ```
 
+```{r}
+gucplant.Aseries.RL<-ggplot(data=gucplant.Aseries, aes(x=gucplant.Aseries$Tank, y=Root.Length)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  ggtitle("Root Length by Shoot Length Session 1")
+gucplant.Aseries.RL + theme(axis.text.x = element_text(size=8))
+gucplant.Aseries.RL
+```
 
 ```{r}
 boxplot(gucplant.Aseries$Root.Length ~ gucplant.Aseries$Species)
