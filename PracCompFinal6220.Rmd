@@ -26,7 +26,7 @@ library(ggplot2)
 ggplot(data=gucplant.Aseries, aes(x=Shoot.Length, y=Root.Length)) +
   geom_point(color="Red", linewidth=2, alpha=0.9) +
   theme_ipsum() +
-  ggtitle("Tank Root Growth for Session 1")
+  ggtitle("Root Length by Shoot Length Session 1")
 ```
 
 
@@ -35,7 +35,7 @@ boxplot(gucplant.Aseries$Root.Length ~ gucplant.Aseries$Species)
 ```
 
 ```{r}
-boxplot(gucplant.Aseries$Root.Length ~ gucplant.Aseries$Species)
+boxplot(gucplant.Aseries$Shoot.Length ~ gucplant.Aseries$Species)
 ```
 
 
@@ -54,23 +54,6 @@ abline(Juncus.reg, col="green")
 abline(Panicum.reg, col="red", lty=2)
 abline(Pontederia.reg, col="blue", lty=3)
 ```
-
-```{r}
-plot(gucplant.Aseries$Root.Length ~ gucplant.Aseries$Shoot.Length, col=factor(gucplant.Aseries$Species))
-
-Juncus <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Juncus "), ]
-Panicum <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Panicum"), ]
-Pontederia <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Pontederia"), ]
-
-Juncus.reg <- lm(Juncus$Root.Length ~ Juncus$Shoot.Length)
-Panicum.reg <- lm(Panicum$Root.Length ~ Panicum$Shoot.Length)
-Pontederia.reg <- lm(Pontederia$Root.Length ~ Pontederia$Shoot.Length)
-
-abline(Juncus.reg, col="green")
-abline(Panicum.reg, col="red", lty=2)
-abline(Pontederia.reg, col="blue", lty=3)
-```
-
 
 ```{r}
 gucplant.Aseries.ANOVA.S <- aov(gucplant.Aseries$Shoot.Length ~ gucplant.Aseries$Species)
@@ -97,7 +80,8 @@ library(tidyverse)
 plt <- ggbetweenstats(
   data = gucplant.Aseries,
   x = Species,
-  y = Root.Length
+  y = Root.Length,
+  ylab = "Root Length"
 )
 
 plt
@@ -107,14 +91,11 @@ plt
 plt2 <- ggbetweenstats(
   data = gucplant.Aseries,
   x = Species,
-  y = Shoot.Length
+  y = Shoot.Length, 
+  ylab="Shoot Length"
 )
 
 plt2
-```
-
-```{r}
-ggplot(data = gucplant.Aseries, mapping = aes())
 ```
 
 
