@@ -56,12 +56,38 @@ abline(Pontederia.reg, col="blue", lty=3)
 ```
 
 ```{r}
-gucplant.Aseries.ANOVA <- aov(gucplant.Aseries$Shoot.Length ~ gucplant.Aseries$Species)
-summary(gucplant.Aseries.ANOVA)
+plot(gucplant.Aseries$Root.Length ~ gucplant.Aseries$Shoot.Length, col=factor(gucplant.Aseries$Species))
+
+Juncus <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Juncus "), ]
+Panicum <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Panicum"), ]
+Pontederia <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Pontederia"), ]
+
+Juncus.reg <- lm(Juncus$Root.Length ~ Juncus$Shoot.Length)
+Panicum.reg <- lm(Panicum$Root.Length ~ Panicum$Shoot.Length)
+Pontederia.reg <- lm(Pontederia$Root.Length ~ Pontederia$Shoot.Length)
+
+abline(Juncus.reg, col="green")
+abline(Panicum.reg, col="red", lty=2)
+abline(Pontederia.reg, col="blue", lty=3)
+```
+
+
+```{r}
+gucplant.Aseries.ANOVA.S <- aov(gucplant.Aseries$Shoot.Length ~ gucplant.Aseries$Species)
+summary(gucplant.Aseries.ANOVA.S)
 ```
 
 ```{r}
-TukeyHSD(gucplant.Aseries.ANOVA)
+TukeyHSD(gucplant.Aseries.ANOVA.S)
+```
+
+```{r}
+gucplant.Aseries.ANOVA.R <- aov(gucplant.Aseries$Root.Length ~ gucplant.Aseries$Species)
+summary(gucplant.Aseries.ANOVA.R)
+```
+
+```{r}
+TukeyHSD(gucplant.Aseries.ANOVA.R)
 ```
 
 ```{r}
