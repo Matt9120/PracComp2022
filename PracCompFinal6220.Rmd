@@ -108,6 +108,13 @@ plt2 <- ggbetweenstats(
 plt2
 ```
 
+```{r}
+gucplantbytank <- ggplot(data=gucplant, aes(x=gucplant$A1-s, y=gucplant$Date)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+gucplantbytank + theme(axis.text.x = element_text(size=8))
+gucplantbytank
+```
 
 
 
