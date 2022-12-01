@@ -1,5 +1,5 @@
 ```{r}
-gucplant<-read.csv("~/Desktop/Practical Computing /PracCompFinal/MTB_GUC_Plant Measurements_PracComp.csv", header = TRUE)
+gucplant<-as.data.frame(read.csv("~/Desktop/Practical Computing /PracCompFinal/MTB_GUC_Plant Measurements_PracComp.csv", header = TRUE))
 gucplant
 ```
 
@@ -109,15 +109,61 @@ plt2
 ```
 
 ```{r}
-gucplantbytank <- ggplot(data=gucplant, aes(x=gucplant$A1-s, y=gucplant$Date)) +
+gucplantbytankA1s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$A1.s)) +
   geom_point(color="Blue", linewidth=2, alpha=0.9) +
   theme_ipsum() +
-gucplantbytank + theme(axis.text.x = element_text(size=8))
-gucplantbytank
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankA1s
 ```
 
+```{r}
+gucplantbytankA2s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$A2.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankA2s
+```
 
+```{r}
+gucplantbytankA3s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$A3.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankA3s
+```
 
+```{r}
+library(ggpubr)
+ggarrange(gucplantbytankA1s + rremove("x.text"), gucplantbytankA2s + rremove("x.text"), gucplantbytankA3s + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankA1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$A1.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankA1r
+
+gucplantbytankA2r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$A2.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankA2r
+
+gucplantbytankA3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$A3.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankA3r
+```
+
+```{r}
+ggarrange(gucplantbytankA1r + rremove("x.text"), gucplantbytankA2r + rremove("x.text"), gucplantbytankA3r + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
 
 
 
