@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ```{r}
 gucplant<-as.data.frame(read.csv("~/Desktop/Practical Computing /PracCompFinal/MTB_GUC_Plant Measurements_PracComp.csv", header = TRUE))
 gucplant
@@ -23,7 +28,7 @@ gucplant.Aseries
 library(hrbrthemes)
 library(ggplot2)
 
-gucplant.Aseries.SL<-ggplot(data=gucplant.Aseries, aes(x=gucplant.Aseries$Tank, y=Shoot.Length)) +
+gucplant.Aseries.SL<-ggplot(data=gucplant.Aseries, aes(x=gucplant.Aseries$Tank, y=ShootLength)) +
   geom_point(color="Red", linewidth=2, alpha=0.9) +
   theme_ipsum() +
   ggtitle("Shoot Length for All Tanks")
@@ -31,8 +36,10 @@ gucplant.Aseries.SL + theme(axis.text.x = element_text(size=8))
 gucplant.Aseries.SL
 ```
 
+
+
 ```{r}
-gucplant.Aseries.RL<-ggplot(data=gucplant.Aseries, aes(x=gucplant.Aseries$Tank, y=Root.Length)) +
+gucplant.Aseries.RL<-ggplot(data=gucplant.Aseries, aes(x=gucplant.Aseries$Tank, y=RootLength)) +
   geom_point(color="Blue", linewidth=2, alpha=0.9) +
   theme_ipsum() +
   ggtitle("Root Length by Shoot Length Session 1")
@@ -41,32 +48,32 @@ gucplant.Aseries.RL
 ```
 
 ```{r}
-boxplot(gucplant.Aseries$Root.Length ~ gucplant.Aseries$Species)
+boxplot(gucplant.Aseries$RootLength ~ gucplant.Aseries$Species)
 ```
 
 ```{r}
-boxplot(gucplant.Aseries$Shoot.Length ~ gucplant.Aseries$Species)
+boxplot(gucplant.Aseries$ShootLength ~ gucplant.Aseries$Species)
 ```
 
 
 ```{r}
-plot(gucplant.Aseries$Root.Length ~ gucplant.Aseries$Shoot.Length, col=factor(gucplant.Aseries$Species))
+plot(gucplant.Aseries$RootLength ~ gucplant.Aseries$ShootLength, col=factor(gucplant.Aseries$Species))
 
-Juncus <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Juncus "), ]
+Juncus <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Juncus"), ]
 Panicum <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Panicum"), ]
 Pontederia <- gucplant.Aseries[ which(gucplant.Aseries$Species == "Pontederia"), ]
 
-Juncus.reg <- lm(Juncus$Root.Length ~ Juncus$Shoot.Length)
-Panicum.reg <- lm(Panicum$Root.Length ~ Panicum$Shoot.Length)
-Pontederia.reg <- lm(Pontederia$Root.Length ~ Pontederia$Shoot.Length)
+Juncus.reg <- lm(Juncus$RootLength ~ Juncus$ShootLength)
+Panicum.reg <- lm(Panicum$RootLength ~ Panicum$ShootLength)
+Pontederia.reg <- lm(Pontederia$RootLength ~ Pontederia$ShootLength)
 
-abline(Juncus.reg, col="green")
+abline(Juncus.reg, col="black")
 abline(Panicum.reg, col="red", lty=2)
-abline(Pontederia.reg, col="blue", lty=3)
+abline(Pontederia.reg, col="green", lty=3)
 ```
 
 ```{r}
-gucplant.Aseries.ANOVA.S <- aov(gucplant.Aseries$Shoot.Length ~ gucplant.Aseries$Species)
+gucplant.Aseries.ANOVA.S <- aov(gucplant.Aseries$ShootLength ~ gucplant.Aseries$Species)
 summary(gucplant.Aseries.ANOVA.S)
 ```
 
@@ -75,7 +82,7 @@ TukeyHSD(gucplant.Aseries.ANOVA.S)
 ```
 
 ```{r}
-gucplant.Aseries.ANOVA.R <- aov(gucplant.Aseries$Root.Length ~ gucplant.Aseries$Species)
+gucplant.Aseries.ANOVA.R <- aov(gucplant.Aseries$RootLength ~ gucplant.Aseries$Species)
 summary(gucplant.Aseries.ANOVA.R)
 ```
 
@@ -90,7 +97,7 @@ library(tidyverse)
 plt <- ggbetweenstats(
   data = gucplant.Aseries,
   x = Species,
-  y = Root.Length,
+  y = RootLength,
   ylab = "Root Length"
 )
 
@@ -101,7 +108,7 @@ plt
 plt2 <- ggbetweenstats(
   data = gucplant.Aseries,
   x = Species,
-  y = Shoot.Length, 
+  y = ShootLength, 
   ylab="Shoot Length"
 )
 
@@ -114,30 +121,27 @@ gucplantbytankA1s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$A1.
   theme_ipsum() +
   theme(axis.text.x = element_text(size = 8))
 gucplantbytankA1s
-```
 
-```{r}
 gucplantbytankA2s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$A2.s)) +
   geom_point(color="Blue", linewidth=2, alpha=0.9) +
   theme_ipsum() +
   theme(axis.text.x = element_text(size = 8))
 gucplantbytankA2s
-```
 
-```{r}
 gucplantbytankA3s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$A3.s)) +
   geom_point(color="Blue", linewidth=2, alpha=0.9) +
   theme_ipsum() +
   theme(axis.text.x = element_text(size = 8))
 gucplantbytankA3s
-```
 
-```{r}
 library(ggpubr)
 ggarrange(gucplantbytankA1s + rremove("x.text"), gucplantbytankA2s + rremove("x.text"), gucplantbytankA3s + rremove("x.text"),
           labels = c("A", "B", "C"), 
           ncol =2, nrow =2)
 ```
+
+
+
 
 ```{r}
 gucplantbytankA1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$A1.r)) +
@@ -157,17 +161,107 @@ gucplantbytankA3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$A3.
   theme_ipsum() +
   theme(axis.text.x = element_text(size = 8))
 gucplantbytankA3r
-```
 
-```{r}
 ggarrange(gucplantbytankA1r + rremove("x.text"), gucplantbytankA2r + rremove("x.text"), gucplantbytankA3r + rremove("x.text"),
           labels = c("A", "B", "C"), 
           ncol =2, nrow =2)
 ```
 
+```{r}
+gucplantbytankB1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$B1.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankB1r
 
+gucplantbytankB2r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$B2.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankB2r
 
+gucplantbytankB3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$B3.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankB3r
 
+ggarrange(gucplantbytankB1r + rremove("x.text"), gucplantbytankB2r + rremove("x.text"), gucplantbytankB3r + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankB1s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$B1.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankB1r
+
+gucplantbytankB2s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$B2.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankB2s
+
+gucplantbytankB3s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$B3.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankB3s
+
+ggarrange(gucplantbytankB1s + rremove("x.text"), gucplantbytankB2s + rremove("x.text"), gucplantbytankB3s + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankC1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$C1.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankC1r
+
+gucplantbytankC2r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$C2.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankC2r
+
+gucplantbytankC3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$C3.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankC3r
+
+ggarrange(gucplantbytankC1r + rremove("x.text"), gucplantbytankC2r + rremove("x.text"), gucplantbytankC3r + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankC1s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$C1.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankC1s
+
+gucplantbytankC2s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$C2.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankC2s
+
+gucplantbytankC3s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$C3.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankC3s
+
+ggarrange(gucplantbytankC1s + rremove("x.text"), gucplantbytankC2s + rremove("x.text"), gucplantbytankC3s + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
 
 
 
