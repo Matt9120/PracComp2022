@@ -1,7 +1,7 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 ```{r}
 gucplant<-as.data.frame(read.csv("~/Desktop/Practical Computing /PracCompFinal/MTB_GUC_Plant Measurements_PracComp.csv", header = TRUE))
@@ -263,5 +263,93 @@ ggarrange(gucplantbytankC1s + rremove("x.text"), gucplantbytankC2s + rremove("x.
           ncol =2, nrow =2)
 ```
 
+```{r}
+gucplant.ANOVA.A.S12 <- aov(gucplant$A1.s ~ gucplant$A2.s)
+summary(gucplant.ANOVA.A.S12)
+```
 
+```{r}
+gucplant.ANOVA.A.S13 <- aov(gucplant$A1.s ~ gucplant$A3.s)
+summary(gucplant.ANOVA.A.S13)
+```
+
+```{r}
+gucplant.ANOVA.A.S23 <- aov(gucplant$A3.s ~ gucplant$A2.s)
+summary(gucplant.ANOVA.A.S23)
+```
+
+```{r}
+gucplant.ANOVA.A.R12 <- aov(gucplant$A1.r ~ gucplant$A2.r)
+summary(gucplant.ANOVA.A.R12)
+```
+
+```{r}
+gucplant.ANOVA.A.R23 <- aov(gucplant$A3.r ~ gucplant$A2.r)
+summary(gucplant.ANOVA.A.R23)
+```
+
+```{r}
+gucplant.ANOVA.A.R13 <- aov(gucplant$A1.r ~ gucplant$A3.r)
+summary(gucplant.ANOVA.A.R13)
+```
+
+```{r}
+gucplant.ANOVA.B.R12 <- aov(gucplant$B1.r ~ gucplant$B2.r)
+summary(gucplant.ANOVA.B.R12)
+```
+
+```{r}
+gucplant.ANOVA.B.R13 <- aov(gucplant$B1.r ~ gucplant$B3.r)
+summary(gucplant.ANOVA.B.R13)
+```
+
+```{r}
+gucplant.ANOVA.B.R23 <- aov(gucplant$B3.r ~ gucplant$B2.r)
+summary(gucplant.ANOVA.B.R23)
+```
+
+```{r}
+gucplant.ANOVA.B.S12 <- aov(gucplant$B1.s ~ gucplant$B2.s)
+summary(gucplant.ANOVA.B.S12)
+```
+
+```{r}
+gucplant.ANOVA.B.S13 <- aov(gucplant$B1.s ~ gucplant$B3.s)
+summary(gucplant.ANOVA.B.S13)
+```
+
+```{r}
+gucplant.ANOVA.B.S23 <- aov(gucplant$B3.s ~ gucplant$B2.s)
+summary(gucplant.ANOVA.B.S23)
+```
+
+```{r}
+gucplant.ANOVA.C.R12 <- aov(gucplant$C1.r ~ gucplant$C2.r)
+summary(gucplant.ANOVA.C.R12)
+```
+
+```{r}
+gucplant.ANOVA.C.R13 <- aov(gucplant$C1.r ~ gucplant$C3.r)
+summary(gucplant.ANOVA.C.R13)
+```
+
+```{r}
+gucplant.ANOVA.C.R23 <- aov(gucplant$C3.r ~ gucplant$C2.r)
+summary(gucplant.ANOVA.C.R23)
+```
+
+```{r}
+gucplant.ANOVA.C.S12 <- aov(gucplant$C1.s ~ gucplant$C2.s)
+summary(gucplant.ANOVA.C.S12)
+```
+
+```{r}
+gucplant.ANOVA.C.S13 <- aov(gucplant$C1.s ~ gucplant$C3.s)
+summary(gucplant.ANOVA.C.S13)
+```
+
+```{r}
+gucplant.ANOVA.C.S23 <- aov(gucplant$C3.s ~ gucplant$C2.s)
+summary(gucplant.ANOVA.C.S23)
+```
 
