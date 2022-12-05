@@ -563,12 +563,36 @@ gucplant.ANOVA.ABCPa.S23 <- aov(gucplant$ABCPa2.s ~ gucplant$ABCPa3.s)
 summary(gucplant.ANOVA.ABCPa.S23)
 ```
 
+```{r}
+gucplant.ANOVA.AB1.R <- aov(gucplant$A1.r ~ gucplant$B1.r)
+summary(gucplant.ANOVA.AB1.R)
+```
 
+```{r}
+gucplant.ANOVA.AC1.R <- aov(gucplant$A1.r ~ gucplant$C1.r)
+summary(gucplant.ANOVA.AC1.R)
+```
 
+```{r}
+gucplant.ANOVA.AB2.R <- aov(gucplant$A2.r ~ gucplant$B2.r)
+summary(gucplant.ANOVA.AB2.R)
+```
 
+```{r}
 
+```
 
+```{r}
 
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
 
 
 
