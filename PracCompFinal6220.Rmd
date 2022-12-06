@@ -262,6 +262,389 @@ ggarrange(gucplantbytankC1s + rremove("x.text"), gucplantbytankC2s + rremove("x.
           labels = c("A", "B", "C"), 
           ncol =2, nrow =2)
 ```
+```{r}
+gucplantbytankABJ1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABJ1.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABJ1r
+
+gucplantbytankABJ2r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABJ2.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABJ2r
+
+gucplantbytankABJ3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABJ3.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABJ3r
+
+ggarrange(gucplantbytankABJ1r + rremove("x.text"), gucplantbytankABJ2r + rremove("x.text"), gucplantbytankABJ3r + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankABJ1s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABJ1.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABJ1s
+
+gucplantbytankABJ2s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABJ2.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABJ2s
+
+gucplantbytankABJ3s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABJ3.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABJ3s
+
+ggarrange(gucplantbytankABJ1s + rremove("x.text"), gucplantbytankABJ2s + rremove("x.text"), gucplantbytankABJ3s + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankABPo1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABPo1.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABPo1r
+
+gucplantbytankABPo2r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABPo2.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABPo2r
+
+gucplantbytankABPo3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABPo3.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABPo3r
+
+ggarrange(gucplantbytankABPo1r + rremove("x.text"), gucplantbytankABPo2r + rremove("x.text"), gucplantbytankABPo3r + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankACJ1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ACJ1.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankACJ1r
+
+gucplantbytankACJ2r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ACJ2.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankACJ2r
+
+gucplantbytankACJ3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ACJ3.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankACJ3r
+
+ggarrange(gucplantbytankACJ1r + rremove("x.text"), gucplantbytankACJ2r + rremove("x.text"), gucplantbytankACJ3r + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankACJ1s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ACJ1.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankACJ1s
+
+gucplantbytankACJ2s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ACJ2.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankACJ2s
+
+gucplantbytankACJ3s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ACJ3.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankACJ3s
+
+ggarrange(gucplantbytankACJ1s + rremove("x.text"), gucplantbytankACJ2s + rremove("x.text"), gucplantbytankACJ3s + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankACPa1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ACPa1.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankACPa1r
+
+gucplantbytankACPa2r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ACPa2.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankACPa2r
+
+gucplantbytankACPa3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ACPa3.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankACPa3r
+
+ggarrange(gucplantbytankACPa1r + rremove("x.text"), gucplantbytankACPa2r + rremove("x.text"), gucplantbytankACPa3r + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankACPa1s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ACPa1.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankACPa1s
+
+gucplantbytankACPa2s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ACPa2.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankACPa2s
+
+gucplantbytankACPa3s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ACPa3.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankACPa3s
+
+ggarrange(gucplantbytankACPa1s + rremove("x.text"), gucplantbytankACPa2s + rremove("x.text"), gucplantbytankACPa3s + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankBCPa1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$BCPa1.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankBCPa1r
+
+gucplantbytankBCPa2r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$BCPa2.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankBCPa2r
+
+gucplantbytankBCPa3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$BCPa3.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankBCPa3r
+
+ggarrange(gucplantbytankBCPa1r + rremove("x.text"), gucplantbytankBCPa2r + rremove("x.text"), gucplantbytankBCPa3r + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankBCPo1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$BCPo1.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankBCPo1r
+
+gucplantbytankBCPo2r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$BCPo2.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankBCPo2r
+
+gucplantbytankBCPo3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$BCPo3.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankBCPo3r
+
+ggarrange(gucplantbytankBCPo1r + rremove("x.text"), gucplantbytankBCPo2r + rremove("x.text"), gucplantbytankBCPo3r + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankBCPo1s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$BCPo1.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankBCPo1r
+
+gucplantbytankBCPo2s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$BCPo2.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankBCPo2s
+
+gucplantbytankBCPo3s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$BCPo3.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankBCPo3s
+
+ggarrange(gucplantbytankBCPo1s + rremove("x.text"), gucplantbytankBCPo2s + rremove("x.text"), gucplantbytankBCPo3s + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankABCPo1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCPo1.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCPo1r
+
+gucplantbytankABCPo2r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCPo2.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCPo2r
+
+gucplantbytankABCPo3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCPo3.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCPo3r
+
+ggarrange(gucplantbytankABCPo1r + rremove("x.text"), gucplantbytankABCPo2r + rremove("x.text"), gucplantbytankABCPo3r + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankABCPo1s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCPo1.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCPo1s
+
+gucplantbytankABCPo2s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCPo2.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCPo2s
+
+gucplantbytankABCPo3s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCPo3.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCPo3s
+
+ggarrange(gucplantbytankABCPo1s + rremove("x.text"), gucplantbytankABCPo2s + rremove("x.text"), gucplantbytankABCPo3s + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankABCPa1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCPa1.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCPa1r
+
+gucplantbytankABCPa2r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCPa2.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCPa2r
+
+gucplantbytankABCPa3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCPa3.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCPa3r
+
+ggarrange(gucplantbytankABCPa1r + rremove("x.text"), gucplantbytankABCPa2r + rremove("x.text"), gucplantbytankABCPa3r + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankABCPa1s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCPa1.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCPa1s
+
+gucplantbytankABCPa2s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCPa2.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCPa2s
+
+gucplantbytankABCPa3s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCPa3.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCPa3s
+
+ggarrange(gucplantbytankABCPa1s + rremove("x.text"), gucplantbytankABCPa2s + rremove("x.text"), gucplantbytankABCPa3s + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankABCJ1r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCJ1.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCJ1r
+
+gucplantbytankABCJ2r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCJ2.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCJ2r
+
+gucplantbytankABCJ3r <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCJ3.r)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCJ3r
+
+ggarrange(gucplantbytankABCJ1r + rremove("x.text"), gucplantbytankABCJ2r + rremove("x.text"), gucplantbytankABCJ3r + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
+
+```{r}
+gucplantbytankABCJ1s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCJ1.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCJ1s
+
+gucplantbytankABCJ2s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCJ2.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCJ2s
+
+gucplantbytankABCJ3s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$ABCJ3.s)) +
+  geom_point(color="Blue", linewidth=2, alpha=0.9) +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(size = 8))
+gucplantbytankABCJ3s
+
+ggarrange(gucplantbytankABCJ1s + rremove("x.text"), gucplantbytankABCJ2s + rremove("x.text"), gucplantbytankABCJ3s + rremove("x.text"),
+          labels = c("A", "B", "C"), 
+          ncol =2, nrow =2)
+```
 
 ```{r}
 gucplant.ANOVA.A.S12 <- aov(gucplant$A1.s ~ gucplant$A2.s)
@@ -579,20 +962,84 @@ summary(gucplant.ANOVA.AB2.R)
 ```
 
 ```{r}
-
+gucplant.ANOVA.AC2.R <- aov(gucplant$A2.r ~ gucplant$C2.r)
+summary(gucplant.ANOVA.AC2.R)
 ```
 
 ```{r}
-
+gucplant.ANOVA.AB3.R <- aov(gucplant$A3.r ~ gucplant$B3.r)
+summary(gucplant.ANOVA.AB3.R)
 ```
 
 ```{r}
-
+gucplant.ANOVA.AC3.R <- aov(gucplant$A3.r ~ gucplant$C3.r)
+summary(gucplant.ANOVA.AC3.R)
 ```
 
 ```{r}
-
+gucplant.ANOVA.AB1.S <- aov(gucplant$A1.s ~ gucplant$B1.s)
+summary(gucplant.ANOVA.AB1.S)
 ```
+
+```{r}
+gucplant.ANOVA.AB2.S <- aov(gucplant$A2.s ~ gucplant$B2.s)
+summary(gucplant.ANOVA.AB2.S)
+```
+
+```{r}
+gucplant.ANOVA.AB3.S <- aov(gucplant$A3.s ~ gucplant$B3.s)
+summary(gucplant.ANOVA.AB3.S)
+```
+
+```{r}
+gucplant.ANOVA.AC1.S <- aov(gucplant$A1.s ~ gucplant$C1.s)
+summary(gucplant.ANOVA.AC1.S)
+```
+
+```{r}
+gucplant.ANOVA.AC2.S <- aov(gucplant$A2.s ~ gucplant$C2.s)
+summary(gucplant.ANOVA.AC2.S)
+```
+
+```{r}
+gucplant.ANOVA.AC3.S <- aov(gucplant$A3.s ~ gucplant$C3.s)
+summary(gucplant.ANOVA.AC3.S)
+```
+
+```{r}
+gucplant.ANOVA.BC1.S <- aov(gucplant$B1.s ~ gucplant$C1.s)
+summary(gucplant.ANOVA.BC1.S)
+```
+
+```{r}
+gucplant.ANOVA.BC2.S <- aov(gucplant$B2.s ~ gucplant$C2.s)
+summary(gucplant.ANOVA.BC2.S)
+```
+
+```{r}
+gucplant.ANOVA.BC3.S <- aov(gucplant$B3.s ~ gucplant$C3.s)
+summary(gucplant.ANOVA.BC3.S)
+```
+
+```{r}
+gucplant.ANOVA.BC1.R <- aov(gucplant$B1.r ~ gucplant$C1.r)
+summary(gucplant.ANOVA.BC1.R)
+```
+
+```{r}
+gucplant.ANOVA.BC2.R <- aov(gucplant$B2.r ~ gucplant$C2.r)
+summary(gucplant.ANOVA.BC2.R)
+```
+
+```{r}
+gucplant.ANOVA.BC3.R <- aov(gucplant$B3.r ~ gucplant$C3.r)
+summary(gucplant.ANOVA.BC3.R)
+```
+
+
+
+
+
 
 
 
