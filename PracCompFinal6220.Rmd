@@ -4,7 +4,8 @@ output:
   pdf_document: default
 ---
 ```{r}
-gucplant<-as.data.frame(read.csv("~/Desktop/Practical Computing /PracCompFinal/MTB_GUC_Plant Measurements_PracComp.csv", header = TRUE))
+gucplant_raw<-as.data.frame(read.csv("~/Desktop/Practical Computing /PracCompFinal/MTB_GUC_Plant Measurements_PracComp.csv", header = TRUE))
+gucplant <- na.omit(gucplant_raw)
 gucplant
 ```
 
