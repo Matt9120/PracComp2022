@@ -3,6 +3,7 @@ title: "BIOL6220_Fall2022_RTutorial"
 output:
   html_document:
     df_print: paged
+  pdf_document: default
 ---
 
 # R Basic
@@ -674,7 +675,7 @@ ggplot(lincoln_weather, aes(x = 'Mean Temperature [F]', y = 'Month', fill = ..x.
     )
 ```
 ```{r}
-spider_data <-read.csv(file="https://wsc.nmbe.ch/resources/species_export_20221103.csv", header=TRUE)
+spider_data <-read.csv(file="https://wsc.nmbe.ch/resources/species_export_20221207.csv", header=TRUE)
 spider_data
 ```
 ```{r}
@@ -752,17 +753,19 @@ plt2 <- plt +
 plt2
 ```
 ```{r}
-ggsave(
-  filename = "results/gapminder_lifeExpxcontinentweb-violinplot-with-ggstatsplot.png", 
-  plot = plt2, 
-  width = 8, 
-  height = 8, 
-  device = "png"
-)
+#ggsave(
+ 
+# filename = "results/gapminder_lifeExpxcontinentweb-violinplot-with-ggstatsplot.png", 
+ # plot = plt2, 
+  
+#width = 8, 
+ # height = 8, 
+  #device = "png"
+#)
 ```
 ```{r}
 #get the shapefile of Africa
-install.packages("maptools")
+#install.packages("maptools")
 library(maptools)
 data(wrld_simpl)
 afr=wrld_simpl[wrld_simpl$REGION==2,]
@@ -855,16 +858,16 @@ pie(table(beer), main="Beer Preference by Students")
 2. Numerical Data
   a. Stem and Leaf Plots
 ```{r}
-stem(pedes)
+#stem(pedes)
 ```
   b. Strip Chart
 ```{r}
-stripchart(pedes, method="stack")
+#stripchart(pedes, method="stack")
 ```
 3. Measures of Center
   a. Mean
 ```{r}
-mean(pedes)
+#mean(pedes)
 ```
 ```{r}
 mean(gapminder$lifeExp)
@@ -920,26 +923,26 @@ summary(pedes)
 5. Plotting
   a. histograms
 ```{r}
-hist(pedes, breaks = "scott")
+#hist(pedes, breaks = "scott")
 ```
 
 ```{r}
-hist(pedes, breaks = "scott", prob=TRUE)
+#hist(pedes, breaks = "scott", prob=TRUE)
 ```
 
 ```{r}
-hist(pedes, breaks="scott", prob=TRUE)
-lines(density(pedes))
+#hist(pedes, breaks="scott", prob=TRUE)
+#lines(density(pedes))
 ```
 ```{r}
-plot(density(pedes))
+#plot(density(pedes))
 ```
   b. Boxplots
 ```{r}
-boxplot(pedes)
+#boxplot(pedes)
 ```
 ```{r}
-summary(boxplot(pedes))
+#summary(boxplot(pedes))
 ```
 
 #### Bivariate and Multivariate Stats
@@ -990,8 +993,8 @@ residuals(gen.reg)
 
   f. Transformations
 ```{r}
-plot(log10(spid.gen$left.bulb^2)~spid.gen$right.bulb)
-log.left.bulb <- log10()
+#plot(log10(spid.gen$left.bulb^2)~spid.gen$right.bulb)
+#log.left.bulb <- log10()
 ```
 
   2. Comparing Discrete Treatment Effects 
@@ -1094,7 +1097,7 @@ sp.pca$score
 
 ```{r}
 #install.packages("ggfortify", dependencies = T)
-#library(ggfortify)
+library(ggfortify)
 sp.pca.plot <- autoplot(sp.pca, 
                         data = spid.gen, 
                         colour = 'habitat')
@@ -1105,7 +1108,7 @@ plot(1:25, rep(0.25,25), pch=1:25, col=1:25, ylim=c(0,6), cex=2, ylab="Line type
 
 points(1:8, rep(0.5,8), pch=20, col=1:8, cex=4)
 
-abline(h=1:6, lty=1:6, lwd5)
+abline(h=1:6, lty=1:6, lwd=5)
 ```
 
 ```{r}
