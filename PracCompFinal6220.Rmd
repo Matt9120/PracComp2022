@@ -27,7 +27,7 @@ gucplant.Aseries<-as.data.frame(read.csv("~/Desktop/Practical Computing /PracCom
 #install.packages(car)
 #library(car)
 ```
-#Same data but different viewpoint than "gucplant" data file above. The gucplant file was used for comparison of one tank to another. gucplant.Aseries was used as a way to compare each species to one another. Converted to dataframe from csv as above for ease of datamanagement and operation. 
+ 
 ```{r}
 #install.packages(c("ggplot2", "ggpubr", "tidyverse", "broom", "AICcmodavg"))
 gucplant.Aseries
