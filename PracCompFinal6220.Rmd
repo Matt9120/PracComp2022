@@ -2,6 +2,19 @@
 output:
   html_document: default
   pdf_document: default
+  
+  
+#Project Overview
+
+## Intro
+
+#Title: Nitrogen and Phosphorus Remediation in Mesocosm Floating Treatment Wetlands receiving Municipal and Aquacultural Wastewater
+
+#Project Goal: Remediate N and P from wastewater that we amended with additional N and P to bring it back to untreated levels you would see/expect when the wastewater first comes to wastewater treatemtn plant 
+Project Objective: To see if addition of plant species to FTW tanks is additive, synergistic, or antagonistic 
+
+
+#GUC data was converted from basic excel file to csv for use in RStudio. CSV was converted to dataframe for ease of storing and management of data for future operations.   
 ---
 ```{r}
 gucplant_raw<-as.data.frame(read.csv("~/Desktop/Practical Computing /PracCompFinal/MTB_GUC_Plant Measurements_PracComp.csv", header = TRUE))
@@ -14,7 +27,7 @@ gucplant.Aseries<-as.data.frame(read.csv("~/Desktop/Practical Computing /PracCom
 #install.packages(car)
 #library(car)
 ```
-
+#Same data but different viewpoint than "gucplant" data file above. The gucplant file was used for comparison of one tank to another. gucplant.Aseries was used as a way to compare each species to one another. Converted to dataframe from csv as above for ease of datamanagement and operation. 
 ```{r}
 #install.packages(c("ggplot2", "ggpubr", "tidyverse", "broom", "AICcmodavg"))
 gucplant.Aseries
@@ -24,6 +37,7 @@ gucplant.Aseries
 ```{r}
 #install.packages("ggplot2")
 ```
+#ggplot used to create a variety of plots based on the data provided from the dataframe. In this case it was created using the shoot length data (in cm) sorted by which tank it came from. Root length is being used in the graph following this one. The data is arranged from smallest length to largest with a scatterplot of data points sorted by a single line of the tank. ggplot was used due to its ability to easily change different aspects of the graph with different lines of code. I was able to give the graph a title using the command ggtitle as well as changing the text size using element_text(size=). Changing the size of the text allowed for all the points to be easily readable along the x-axis. 
 
 ```{r}
 library(hrbrthemes)
@@ -48,15 +62,19 @@ gucplant.Aseries.RL + theme(axis.text.x = element_text(size=8))
 gucplant.Aseries.RL
 ```
 
+Boxplots were chosen to see how the data were spread out. The advantage in using the boxplot was that I was able to see the distribution fo the data without taking up as much space with something such as a histogram which was useful because I was able to compare multiple datasets within the same graph. With the boxplot we could observe where the majority of the data lie as well as outliers due ot the use of the five number summary. 
+
+We can see that the pontederia data is skewed towards zero, which makes since due to plants dying off early resulting in that being most of the data. Without outliers present, panicum offers the most centralized dataset. Both juncus and panicum have data with a large number of outliers (juncus with most outliers in the upper quartile and panicum having it spread out amongst first and third quartile). 
 ```{r}
 boxplot(gucplant.Aseries$RootLength ~ gucplant.Aseries$Species)
 ```
 
+#Shoot length tells a different story than root lenth. Median value of the data were larger due to roots generally being shorter than shoots. Pontederia still has skewed data with the median approaching and the minmimum at the zero value. Pancicum's median favors the upper end of the spectrum and juncus has the median placed at the lower end with a more even spread of the data values. Panicum has the only outlier in the graph. 
 ```{r}
 boxplot(gucplant.Aseries$ShootLength ~ gucplant.Aseries$Species)
 ```
 
-
+#Plot of roots by shoots to show association between them. One may expect the longer the roots the longer the shoots as that is an indicator of good plant growth and health. Initially where we name the different data was to associate the data based upon what shows up in the csv file. This is the point of the "which" command in where we are saying that everything that has this word or value associated, bring it over. The lm() command was used to create a linear regression of the grouped data. This way we can predict future data based on what we have currently. abline was used to give a line of best fit for the data. This line of best fit estimates the straight line through the data that minimized the distance between it and all the other points within the graph. col= was used ti associate the line with the color previously given to the data with lty= being used to maximize difference between the lines as to not confuse them. 
 ```{r}
 plot(gucplant.Aseries$RootLength ~ gucplant.Aseries$ShootLength, col=factor(gucplant.Aseries$Species))
 
@@ -73,6 +91,7 @@ abline(Panicum.reg, col="red", lty=2)
 abline(Pontederia.reg, col="green", lty=3)
 ```
 
+#Anova was the next form of data to calculate. This is useful for testing three or more variables at a time, which in this case we have three plant species so this is perfect. This is similar to a two sample t-test, but with ANOVA we are likely to have fewer type 1 errors than the t-test. Within the anova shoot length was tested by species to see if the data is statistically significant from one another. Based on the p-value the data does come back as statistically significant but with ANOVA, it cannot give specifics as to which set of data it is, which is why a Tukey test was run next to compare datasets. 
 ```{r}
 gucplant.Aseries.ANOVA.S <- aov(gucplant.Aseries$ShootLength ~ gucplant.Aseries$Species)
 summary(gucplant.Aseries.ANOVA.S)
@@ -91,6 +110,7 @@ summary(gucplant.Aseries.ANOVA.R)
 TukeyHSD(gucplant.Aseries.ANOVA.R)
 ```
 
+#The guc.Aseries was brought in again using a pairwise test to compare homogeneity amongst the species. The xlabel was the plant species with the y label being the shoot length for this graph and the root length for the graph below. The function ggbetweenstats() was used for its ability to create publication ready plots with relavent statistical analysis. In this case it was used to create a violin plot, which has the advantage over a traditional box plot by giving an more accurate accurate view on the distribution of the data points. From the graph we can see that each of the species is statistically significant from one another. From the confidence interval given we can say with 95% confidence that the mean of the data set is between 0.62 and 1.00 for this specific measure of plant species against shoot length. The r value can tell us that 71% of the points along the graph can be explained and that their is a positive correlation amongst the datapoints for the graph. 
 ```{r}
 library(ggstatsplot)
 library(tidyverse)
@@ -116,6 +136,7 @@ plt2 <- ggbetweenstats(
 plt2
 ```
 
+#ggplot was ran again for a comparison of the overall growth of the roots and the shoots of all species within each tank. For the tanks with multiple plant species the plant species were singled out for individual analysis of their performance in the tanks. geom_point() draws the points defined by the x and y variables previously defined and can give them specifics on how they are presented on the graph. Within geom point we can give the points color (color=), tell it how big to make the points (linewidth=), annd the opacity of the points on a scale from 0-1 (alpha=). Within the ggpubr library we get the ggarrange function which allows for the graphs to be placed within a single page to be displayed at the same time. rremove allowed for the removal of the x labels that would have otheriwse been to jumbled to read. The label function gives a name to each graph (tank 1 is "a", tank 2 is "b" and tank 3 is "c") on the page while the ncola and nrow lays out the grid of how the graphs show up. In this case it is a 2x2 pattern. 
 ```{r}
 gucplantbytankA1s <- ggplot(data = gucplant, aes(x=gucplant$Date, y=gucplant$A1.s)) +
   geom_point(color="Blue", linewidth=2, alpha=0.9) +
@@ -647,6 +668,8 @@ ggarrange(gucplantbytankABCJ1s + rremove("x.text"), gucplantbytankABCJ2s + rremo
           ncol =2, nrow =2)
 ```
 
+
+#ANOVA was used again to test the association between plants within the same treatment and eventually further down the file between tanks. Within the ANOVA function using aov() you can set up specfic columns within the dataframe as seen here by gucplant$A1.s ~ gucplantA2.s. Within these ANOVA tests, specifically this one here, the p-value is 0.533 but the f-value can be considered small at 0.412. This shows that the data within this specific ANOVA is not statistically different from one another. 
 ```{r}
 gucplant.ANOVA.A.S12 <- aov(gucplant$A1.s ~ gucplant$A2.s)
 summary(gucplant.ANOVA.A.S12)
@@ -1037,10 +1060,162 @@ gucplant.ANOVA.BC3.R <- aov(gucplant$B3.r ~ gucplant$C3.r)
 summary(gucplant.ANOVA.BC3.R)
 ```
 
+```{r}
+gucplant.ANOVA.ABAC1.R <- aov(gucplant$ABJ1.r ~ gucplant$ACJ1.r)
+summary(gucplant.ANOVA.ABAC1.R)
+```
 
+```{r}
+gucplant.ANOVA.ABAC13.R <- aov(gucplant$ABJ1.r ~ gucplant$ACJ3.r)
+summary(gucplant.ANOVA.ABAC13.R)
+```
 
+```{r}
+gucplant.ANOVA.AB2AC1.R <- aov(gucplant$ABJ2.r ~ gucplant$ACJ1.r)
+summary(gucplant.ANOVA.AB2AC1.R)
+```
 
+```{r}
+gucplant.ANOVA.AB3AC1.R <- aov(gucplant$ABJ3.r ~ gucplant$ACJ1.r)
+summary(gucplant.ANOVA.AB3AC1.R)
+```
 
+```{r}
+gucplant.ANOVA.AB2AC2.R <- aov(gucplant$ABJ2.r ~ gucplant$ACJ2.r)
+summary(gucplant.ANOVA.AB2AC2.R)
+```
 
+```{r}
+gucplant.ANOVA.AB3AC3.R <- aov(gucplant$ABJ2.r ~ gucplant$ACJ3.r)
+summary(gucplant.ANOVA.AB3AC3.R)
+```
 
+```{r}
+gucplant.ANOVA.AB3AC3.R <- aov(gucplant$ABJ3.r ~ gucplant$ACJ3.r)
+summary(gucplant.ANOVA.AB3AC3.R)
+```
 
+```{r}
+gucplant.ANOVA.ABAC1.S <- aov(gucplant$ABJ1.s ~ gucplant$ACJ1.s)
+summary(gucplant.ANOVA.ABAC1.S)
+```
+
+```{r}
+gucplant.ANOVA.ABAC13.S <- aov(gucplant$ABJ1.s ~ gucplant$ACJ3.s)
+summary(gucplant.ANOVA.ABAC13.S)
+```
+
+```{r}
+gucplant.ANOVA.AB2AC1.S <- aov(gucplant$ABJ2.s ~ gucplant$ACJ1.s)
+summary(gucplant.ANOVA.AB2AC1.S)
+```
+
+```{r}
+gucplant.ANOVA.AB3AC1.S <- aov(gucplant$ABJ3.s ~ gucplant$ACJ1.s)
+summary(gucplant.ANOVA.AB3AC1.S)
+```
+
+```{r}
+gucplant.ANOVA.AB2AC2.S <- aov(gucplant$ABJ2.s ~ gucplant$ACJ2.s)
+summary(gucplant.ANOVA.AB2AC2.S)
+```
+
+```{r}
+gucplant.ANOVA.AB2AC3.S <- aov(gucplant$ABJ2.s ~ gucplant$ACJ3.s)
+summary(gucplant.ANOVA.AB2AC3.S)
+```
+
+```{r}
+gucplant.ANOVA.AB3AC3.S <- aov(gucplant$ABJ3.s ~ gucplant$ACJ3.s)
+summary(gucplant.ANOVA.AB3AC3.S)
+```
+
+```{r}
+gucplant.ANOVA.AB1BC1.R <- aov(gucplant$ ABJ1.r ~ gucplant$BCPo1.r)
+summary(gucplant.ANOVA.AB1BC1.R)
+```
+
+```{r}
+gucplant.ANOVA.AB1BC2.R <- aov(gucplant$ ABJ1.r ~ gucplant$BCPo2.r)
+summary(gucplant.ANOVA.AB1BC2.R)
+```
+
+```{r}
+gucplant.ANOVA.AB1BC3.R <- aov(gucplant$ ABJ1.r ~ gucplant$BCPo3.r)
+summary(gucplant.ANOVA.AB1BC2.R)
+```
+
+```{r}
+gucplant.ANOVA.AB2BC1.R <- aov(gucplant$ ABJ2.r ~ gucplant$BCPo1.r)
+summary(gucplant.ANOVA.AB2BC1.R)
+```
+
+```{r}
+gucplant.ANOVA.AB2BC2.R <- aov(gucplant$ ABJ2.r ~ gucplant$BCPo2.r)
+summary(gucplant.ANOVA.AB2BC2.R)
+```
+
+```{r}
+gucplant.ANOVA.AB2BC3.R <- aov(gucplant$ ABJ2.r ~ gucplant$BCPo3.r)
+summary(gucplant.ANOVA.AB2BC3.R)
+```
+
+```{r}
+gucplant.ANOVA.AB3BC1.R <- aov(gucplant$ ABJ3.r ~ gucplant$BCPo1.r)
+summary(gucplant.ANOVA.AB3BC1.R)
+```
+
+```{r}
+gucplant.ANOVA.AB3BC2.R <- aov(gucplant$ ABJ3.r ~ gucplant$BCPo2.r)
+summary(gucplant.ANOVA.AB3BC2.R)
+```
+
+```{r}
+gucplant.ANOVA.AB3BC3.R <- aov(gucplant$ ABJ3.r ~ gucplant$BCPo3.r)
+summary(gucplant.ANOVA.AB3BC3.R)
+```
+
+```{r}
+gucplant.ANOVA.AB1BC1.R <- aov(gucplant$ ABJ1.r ~ gucplant$BCPo1.r)
+summary(gucplant.ANOVA.AB1BC1.R)
+```
+
+```{r}
+gucplant.ANOVA.AB1BC2.S <- aov(gucplant$ ABJ1.s ~ gucplant$BCPo2.s)
+summary(gucplant.ANOVA.AB1BC2.S)
+```
+
+```{r}
+gucplant.ANOVA.AB1BC3.S <- aov(gucplant$ ABJ1.s ~ gucplant$BCPo3.s)
+summary(gucplant.ANOVA.AB1BC2.S)
+```
+
+```{r}
+gucplant.ANOVA.AB2BC1.S <- aov(gucplant$ ABJ2.s ~ gucplant$BCPo1.s)
+summary(gucplant.ANOVA.AB2BC1.S)
+```
+
+```{r}
+gucplant.ANOVA.AB2BC2.S <- aov(gucplant$ ABJ2.s ~ gucplant$BCPo2.s)
+summary(gucplant.ANOVA.AB2BC2.S)
+```
+
+```{r}
+gucplant.ANOVA.AB2BC3.S <- aov(gucplant$ ABJ2.s ~ gucplant$BCPo3.s)
+summary(gucplant.ANOVA.AB2BC3.S)
+```
+
+```{r}
+gucplant.ANOVA.AB3BC1.S <- aov(gucplant$ ABJ3.s ~ gucplant$BCPo1.s)
+summary(gucplant.ANOVA.AB3BC1.S)
+```
+
+```{r}
+gucplant.ANOVA.AB3BC2.S <- aov(gucplant$ ABJ3.s ~ gucplant$BCPo2.s)
+summary(gucplant.ANOVA.AB3BC2.S)
+```
+
+```{r}
+gucplant.ANOVA.AB3BC3.S <- aov(gucplant$ ABJ3.s ~ gucplant$BCPo3.s)
+summary(gucplant.ANOVA.AB3BC3.S)
+```
