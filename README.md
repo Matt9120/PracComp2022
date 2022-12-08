@@ -26,12 +26,16 @@ Variables Used to Describe the Data:
 - Root Length of each individual species (Juncus effesus, Pontederia cordata, and Panicum virgatum)
 - Shoot Length of each individual species (Juncus effesus, Pontederia cordata, and Panicum virgatum)
 - Date of which the sample was collected
-- Which species belong to each tank and date (A1 - Juncus)
+- Which species belong to each tank and date (A1 - Juncus - 06/26/2022 -> 09/26/2022)
 
 Plant Types: 
 Juncus effesus
 Pontederia cordata
 Panicum virgatum
+
+Data Source: 
+gucplant = "~/Desktop/Practical Computing /PracCompFinal/MTB_GUC_Plant Measurements_PracComp.csv"
+gucplant.Aseries = ""~/Desktop/Practical Computing /PracCompFinal/MTB_GUC_Plant Measurements_PracComp-BREWER.csv"
 
 Scatterplot of root and shoot lengths:
 ggplot used to create a variety of plots based on the data provided from the dataframe. In this case it was created using the shoot length data (in cm) sorted by which tank it came from. Root length is being used in the graph following this one. The data is arranged from smallest length to largest with a scatterplot of data points sorted by a single line of the tank. ggplot was used due to its ability to easily change different aspects of the graph with different lines of code. I was able to give the graph a title using the command ggtitle as well as changing the text size using element_text(size=). Changing the size of the text allowed for all the points to be easily readable along the x-axis. 
