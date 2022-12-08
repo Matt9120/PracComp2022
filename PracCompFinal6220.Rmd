@@ -903,22 +903,22 @@ gucplant.ttest.ABCJ.S12
 
 ```{r}
 gucplant.ttest.ABCJ.S13<- t.test(gucplant$ABCJ1.s, gucplant$ABCJ3.s)
-gucplant.ttest.ABCJ.R12
+gucplant.ttest.ABCJ.S13
 ```
 
 ```{r}
-gucplant.ANOVA.ABCJ.S23<- aov(gucplant$ABCJ3.s ~ gucplant$ABCJ2.s)
-summary(gucplant.ANOVA.ABCJ.S23)
+gucplant.ttest.ABCJ.S23<- t.test(gucplant$ABCJ3.s, gucplant$ABCJ2.s)
+gucplant.ttest.ABCJ.S23
 ```
 
 ```{r}
-gucplant.ANOVA.ABCPo.R12 <- aov(gucplant$ABCPo1.r ~ gucplant$ABCPo2.r)
-summary(gucplant.ANOVA.ABCPo.R12)
+gucplant.ttest.ABCPo.R12 <- t.test(gucplant$ABCPo1.r, gucplant$ABCPo2.r)
+gucplant.ttest.ABCPo.R12
 ```
 
 ```{r}
-gucplant.ANOVA.ABCPo.R13 <- aov(gucplant$ABCPo1.r ~ gucplant$ABCPo3.r)
-summary(gucplant.ANOVA.ABCPo.R13)
+gucplant.ttest.ABCPo.R13 <- t.test(gucplant$ABCPo1.r, gucplant$ABCPo3.r)
+gucplant.ttest.ABCPo.R13
 ```
 
 ```{r}
