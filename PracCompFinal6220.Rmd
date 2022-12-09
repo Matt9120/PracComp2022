@@ -922,301 +922,301 @@ gucplant.ttest.ABCPo.R13
 ```
 
 ```{r}
-gucplant.ANOVA.ABCPo.R23 <- aov(gucplant$ABCPo2.r ~ gucplant$ABCPo3.r)
-summary(gucplant.ANOVA.ABCPo.R23)
+gucplant.ttest.ABCPo.R23 <- t.test(gucplant$ABCPo2.r, gucplant$ABCPo3.r)
+gucplant.ttest.ABCPo.R23
 ```
 
 ```{r}
-gucplant.ANOVA.ABCPo.S12 <- aov(gucplant$ABCPo1.s ~ gucplant$ABCPo3.s)
-summary(gucplant.ANOVA.ABCPo.S12)
+gucplant.ttest.ABCPo.S12 <- t.test(gucplant$ABCPo1.s, gucplant$ABCPo3.s)
+gucplant.ttest.ABCPo.S12
 ```
 
 ```{r}
-gucplant.ANOVA.ABCPo.S13 <- aov(gucplant$ABCPo1.s ~ gucplant$ABCPo3.s)
-summary(gucplant.ANOVA.ABCPo.S13)
+gucplant.ttest.ABCPo.S13 <- t.test(gucplant$ABCPo1.s, gucplant$ABCPo3.s)
+gucplant.ttest.ABCPo.S13
 ```
 
 ```{r}
-gucplant.ANOVA.ABCPo.S23 <- aov(gucplant$ABCPo2.s ~ gucplant$ABCPo3.s)
-summary(gucplant.ANOVA.ABCPo.S23)
+gucplant.ttest.ABCPo.S23 <- t.test(gucplant$ABCPo2.s, gucplant$ABCPo3.s)
+gucplant.ttest.ABCPo.S23
 ```
 
 ```{r}
-gucplant.ANOVA.ABCPa.R12 <- aov(gucplant$ABCPa1.r ~ gucplant$ABCPa2.r)
-summary(gucplant.ANOVA.ABCPa.R12)
+gucplant.ttest.ABCPa.R12 <- t.test(gucplant$ABCPa1.r, gucplant$ABCPa2.r)
+gucplant.ttest.ABCPa.R12
 ```
 
 ```{r}
-gucplant.ANOVA.ABCPa.R13 <- aov(gucplant$ABCPa1.r ~ gucplant$ABCPa3.r)
-summary(gucplant.ANOVA.ABCPa.R13)
+gucplant.ttest.ABCPa.R13 <- t.test(gucplant$ABCPa1.r, gucplant$ABCPa3.r)
+gucplant.ttest.ABCPa.R13
 ```
 
 ```{r}
-gucplant.ANOVA.ABCPa.R23 <- aov(gucplant$ABCPa3.r ~ gucplant$ABCPa2.r)
-summary(gucplant.ANOVA.ABCPa.R23)
+gucplant.ttest.ABCPa.R23 <- t.test(gucplant$ABCPa3.r, gucplant$ABCPa2.r)
+gucplant.ttest.ABCPa.R23
 ```
 
 ```{r}
-gucplant.ANOVA.ABCPa.S13 <- aov(gucplant$ABCPa1.s ~ gucplant$ABCPa2.s)
-summary(gucplant.ANOVA.ABCPa.S13)
+gucplant.ttest.ABCPa.S13 <- t.test(gucplant$ABCPa1.s, gucplant$ABCPa2.s)
+gucplant.ttest.ABCPa.S13
 ```
 
 ```{r}
-gucplant.ANOVA.ABCPa.S13 <- aov(gucplant$ABCPa1.s ~ gucplant$ABCPa3.s)
-summary(gucplant.ANOVA.ABCPa.S13)
+gucplant.ttest.ABCPa.S13 <- t.test(gucplant$ABCPa1.s, gucplant$ABCPa3.s)
+gucplant.ttest.ABCPa.S13
 ```
 
 ```{r}
-gucplant.ANOVA.ABCPa.S23 <- aov(gucplant$ABCPa2.s ~ gucplant$ABCPa3.s)
-summary(gucplant.ANOVA.ABCPa.S23)
+gucplant.ttest.ABCPa.S23 <- t.test(gucplant$ABCPa2.s, gucplant$ABCPa3.s)
+gucplant.ttest.ABCPa.S23
 ```
 
 ```{r}
-gucplant.ANOVA.AB1.R <- aov(gucplant$A1.r ~ gucplant$B1.r)
-summary(gucplant.ANOVA.AB1.R)
+gucplant.ttest.AB1.R <- t.test(gucplant$A1.r, gucplant$B1.r)
+gucplant.ttest.AB1.R
 ```
 
 ```{r}
-gucplant.ANOVA.AC1.R <- aov(gucplant$A1.r ~ gucplant$C1.r)
-summary(gucplant.ANOVA.AC1.R)
+gucplant.ttest.AC1.R <- t.test(gucplant$A1.r, gucplant$C1.r)
+gucplant.ttest.AC1.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB2.R <- aov(gucplant$A2.r ~ gucplant$B2.r)
-summary(gucplant.ANOVA.AB2.R)
+gucplant.ttest.AB2.R <- t.test(gucplant$A2.r, gucplant$B2.r)
+gucplant.ttest.AB2.R
 ```
 
 ```{r}
-gucplant.ANOVA.AC2.R <- aov(gucplant$A2.r ~ gucplant$C2.r)
-summary(gucplant.ANOVA.AC2.R)
+gucplant.ttest.AC2.R <- t.test(gucplant$A2.r, gucplant$C2.r)
+gucplant.ttest.AC2.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB3.R <- aov(gucplant$A3.r ~ gucplant$B3.r)
-summary(gucplant.ANOVA.AB3.R)
+gucplant.ttest.AB3.R <- t.test(gucplant$A3.r, gucplant$B3.r)
+gucplant.ttest.AB3.R
 ```
 
 ```{r}
-gucplant.ANOVA.AC3.R <- aov(gucplant$A3.r ~ gucplant$C3.r)
-summary(gucplant.ANOVA.AC3.R)
+gucplant.ttest.AC3.R <- t.test(gucplant$A3.r, gucplant$C3.r)
+gucplant.ttest.AC3.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB1.S <- aov(gucplant$A1.s ~ gucplant$B1.s)
-summary(gucplant.ANOVA.AB1.S)
+gucplant.ttest.AB1.S <- t.test(gucplant$A1.s, gucplant$B1.s)
+gucplant.ttest.AB1.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB2.S <- aov(gucplant$A2.s ~ gucplant$B2.s)
-summary(gucplant.ANOVA.AB2.S)
+gucplant.ttest.AB2.S <- t.test(gucplant$A2.s, gucplant$B2.s)
+gucplant.ttest.AB2.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB3.S <- aov(gucplant$A3.s ~ gucplant$B3.s)
-summary(gucplant.ANOVA.AB3.S)
+gucplant.ttest.AB3.S <- t.test(gucplant$A3.s, gucplant$B3.s)
+gucplant.ttest.AB3.S
 ```
 
 ```{r}
-gucplant.ANOVA.AC1.S <- aov(gucplant$A1.s ~ gucplant$C1.s)
-summary(gucplant.ANOVA.AC1.S)
+gucplant.ttest.AC1.S <- t.test(gucplant$A1.s, gucplant$C1.s)
+gucplant.ttest.AC1.S
 ```
 
 ```{r}
-gucplant.ANOVA.AC2.S <- aov(gucplant$A2.s ~ gucplant$C2.s)
-summary(gucplant.ANOVA.AC2.S)
+gucplant.ttest.AC2.S <- t.test(gucplant$A2.s, gucplant$C2.s)
+gucplant.ttest.AC2.S
 ```
 
 ```{r}
-gucplant.ANOVA.AC3.S <- aov(gucplant$A3.s ~ gucplant$C3.s)
-summary(gucplant.ANOVA.AC3.S)
+gucplant.ttest.AC3.S <- t.test(gucplant$A3.s, gucplant$C3.s)
+gucplant.ttest.AC3.S
 ```
 
 ```{r}
-gucplant.ANOVA.BC1.S <- aov(gucplant$B1.s ~ gucplant$C1.s)
-summary(gucplant.ANOVA.BC1.S)
+gucplant.ttest.BC1.S <- t.test(gucplant$B1.s, gucplant$C1.s)
+gucplant.ttest.BC1.S
 ```
 
 ```{r}
-gucplant.ANOVA.BC2.S <- aov(gucplant$B2.s ~ gucplant$C2.s)
-summary(gucplant.ANOVA.BC2.S)
+gucplant.ttest.BC2.S <- t.test(gucplant$B2.s, gucplant$C2.s)
+gucplant.ttest.BC2.S
 ```
 
 ```{r}
-gucplant.ANOVA.BC3.S <- aov(gucplant$B3.s ~ gucplant$C3.s)
-summary(gucplant.ANOVA.BC3.S)
+gucplant.ttest.BC3.S <- t.test(gucplant$B3.s, gucplant$C3.s)
+gucplant.ttest.BC3.S
 ```
 
 ```{r}
-gucplant.ANOVA.BC1.R <- aov(gucplant$B1.r ~ gucplant$C1.r)
-summary(gucplant.ANOVA.BC1.R)
+gucplant.ttest.BC1.R <- t.test(gucplant$B1.r, gucplant$C1.r)
+gucplant.ttest.BC1.R
 ```
 
 ```{r}
-gucplant.ANOVA.BC2.R <- aov(gucplant$B2.r ~ gucplant$C2.r)
-summary(gucplant.ANOVA.BC2.R)
+gucplant.ttest.BC2.R <- t.test(gucplant$B2.r, gucplant$C2.r)
+gucplant.ttest.BC2.R
 ```
 
 ```{r}
-gucplant.ANOVA.BC3.R <- aov(gucplant$B3.r ~ gucplant$C3.r)
-summary(gucplant.ANOVA.BC3.R)
+gucplant.ttest.BC3.R <- t.test(gucplant$B3.r, gucplant$C3.r)
+gucplant.ttest.BC3.R
 ```
 
 ```{r}
-gucplant.ANOVA.ABAC1.R <- aov(gucplant$ABJ1.r ~ gucplant$ACJ1.r)
-summary(gucplant.ANOVA.ABAC1.R)
+gucplant.ttest.ABAC1.R <- t.test(gucplant$ABJ1.r, gucplant$ACJ1.r)
+gucplant.ttest.ABAC1.R
 ```
 
 ```{r}
-gucplant.ANOVA.ABAC13.R <- aov(gucplant$ABJ1.r ~ gucplant$ACJ3.r)
-summary(gucplant.ANOVA.ABAC13.R)
+gucplant.ttest.ABAC13.R <- t.test(gucplant$ABJ1.r, gucplant$ACJ3.r)
+gucplant.ttest.ABAC13.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB2AC1.R <- aov(gucplant$ABJ2.r ~ gucplant$ACJ1.r)
-summary(gucplant.ANOVA.AB2AC1.R)
+gucplant.ttest.AB2AC1.R <- t.test(gucplant$ABJ2.r, gucplant$ACJ1.r)
+gucplant.ttest.AB2AC1.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB3AC1.R <- aov(gucplant$ABJ3.r ~ gucplant$ACJ1.r)
-summary(gucplant.ANOVA.AB3AC1.R)
+gucplant.ttest.AB3AC1.R <- t.test(gucplant$ABJ3.r, gucplant$ACJ1.r)
+gucplant.ttest.AB3AC1.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB2AC2.R <- aov(gucplant$ABJ2.r ~ gucplant$ACJ2.r)
-summary(gucplant.ANOVA.AB2AC2.R)
+gucplant.ttest.AB2AC2.R <- t.test(gucplant$ABJ2.r, gucplant$ACJ2.r)
+gucplant.ttest.AB2AC2.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB3AC3.R <- aov(gucplant$ABJ2.r ~ gucplant$ACJ3.r)
-summary(gucplant.ANOVA.AB3AC3.R)
+gucplant.ttest.AB3AC3.R <- t.test(gucplant$ABJ2.r, gucplant$ACJ3.r)
+gucplant.ttest.AB3AC3.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB3AC3.R <- aov(gucplant$ABJ3.r ~ gucplant$ACJ3.r)
-summary(gucplant.ANOVA.AB3AC3.R)
+gucplant.ttest.AB3AC3.R <- t.test(gucplant$ABJ3.r, gucplant$ACJ3.r)
+gucplant.ttest.AB3AC3.R
 ```
 
 ```{r}
-gucplant.ANOVA.ABAC1.S <- aov(gucplant$ABJ1.s ~ gucplant$ACJ1.s)
-summary(gucplant.ANOVA.ABAC1.S)
+gucplant.ttest.ABAC1.S <- t.test(gucplant$ABJ1.s, gucplant$ACJ1.s)
+gucplant.ttest.ABAC1.S
 ```
 
 ```{r}
-gucplant.ANOVA.ABAC13.S <- aov(gucplant$ABJ1.s ~ gucplant$ACJ3.s)
-summary(gucplant.ANOVA.ABAC13.S)
+gucplant.ttest.ABAC13.S <- t.test(gucplant$ABJ1.s, gucplant$ACJ3.s)
+gucplant.ttest.ABAC13.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB2AC1.S <- aov(gucplant$ABJ2.s ~ gucplant$ACJ1.s)
-summary(gucplant.ANOVA.AB2AC1.S)
+gucplant.ttest.AB2AC1.S <- t.test(gucplant$ABJ2.s, gucplant$ACJ1.s)
+gucplant.ttest.AB2AC1.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB3AC1.S <- aov(gucplant$ABJ3.s ~ gucplant$ACJ1.s)
-summary(gucplant.ANOVA.AB3AC1.S)
+gucplant.ttest.AB3AC1.S <- t.test(gucplant$ABJ3.s, gucplant$ACJ1.s)
+gucplant.ttest.AB3AC1.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB2AC2.S <- aov(gucplant$ABJ2.s ~ gucplant$ACJ2.s)
-summary(gucplant.ANOVA.AB2AC2.S)
+gucplant.ttest.AB2AC2.S <- t.test(gucplant$ABJ2.s, gucplant$ACJ2.s)
+gucplant.ttest.AB2AC2.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB2AC3.S <- aov(gucplant$ABJ2.s ~ gucplant$ACJ3.s)
-summary(gucplant.ANOVA.AB2AC3.S)
+gucplant.ttest.AB2AC3.S <- t.test(gucplant$ABJ2.s, gucplant$ACJ3.s)
+gucplant.ttest.AB2AC3.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB3AC3.S <- aov(gucplant$ABJ3.s ~ gucplant$ACJ3.s)
-summary(gucplant.ANOVA.AB3AC3.S)
+gucplant.ttest.AB3AC3.S <- t.test(gucplant$ABJ3.s, gucplant$ACJ3.s)
+gucplant.ttest.AB3AC3.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB1BC1.R <- aov(gucplant$ ABJ1.r ~ gucplant$BCPo1.r)
-summary(gucplant.ANOVA.AB1BC1.R)
+gucplant.ttest.AB1BC1.R <- t.test(gucplant$ ABPo1.r, gucplant$BCPo1.r)
+gucplant.ttest.AB1BC1.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB1BC2.R <- aov(gucplant$ ABJ1.r ~ gucplant$BCPo2.r)
-summary(gucplant.ANOVA.AB1BC2.R)
+gucplant.ttest.AB1BC2.R <- t.test(gucplant$ABPo1.r, gucplant$BCPo2.r)
+gucplant.ttest.AB1BC2.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB1BC3.R <- aov(gucplant$ ABJ1.r ~ gucplant$BCPo3.r)
-summary(gucplant.ANOVA.AB1BC2.R)
+gucplant.ttest.AB1BC3.R <- t.test(gucplant$ ABPo1.r, gucplant$BCPo3.r)
+gucplant.ttest.AB1BC2.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB2BC1.R <- aov(gucplant$ ABJ2.r ~ gucplant$BCPo1.r)
-summary(gucplant.ANOVA.AB2BC1.R)
+gucplant.ttest.AB2BC1.R <- t.test(gucplant$ ABPo2.r, gucplant$BCPo1.r)
+gucplant.ttest.AB2BC1.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB2BC2.R <- aov(gucplant$ ABJ2.r ~ gucplant$BCPo2.r)
-summary(gucplant.ANOVA.AB2BC2.R)
+gucplant.ttest.AB2BC2.R <- t.test(gucplant$ ABPo2.r, gucplant$BCPo2.r)
+gucplant.ttest.AB2BC2.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB2BC3.R <- aov(gucplant$ ABJ2.r ~ gucplant$BCPo3.r)
-summary(gucplant.ANOVA.AB2BC3.R)
+gucplant.ANOVA.AB2BC3.R <- t.test(gucplant$ ABPo2.r, gucplant$BCPo3.r)
+gucplant.ANOVA.AB2BC3.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB3BC1.R <- aov(gucplant$ ABJ3.r ~ gucplant$BCPo1.r)
-summary(gucplant.ANOVA.AB3BC1.R)
+gucplant.ANOVA.AB3BC1.R <- t.test(gucplant$ ABPo3.r, gucplant$BCPo1.r)
+gucplant.ANOVA.AB3BC1.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB3BC2.R <- aov(gucplant$ ABJ3.r ~ gucplant$BCPo2.r)
-summary(gucplant.ANOVA.AB3BC2.R)
+gucplant.ttest.AB3BC2.R <- t.test(gucplant$ ABPo3.r, gucplant$BCPo2.r)
+gucplant.ttest.AB3BC2.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB3BC3.R <- aov(gucplant$ ABJ3.r ~ gucplant$BCPo3.r)
-summary(gucplant.ANOVA.AB3BC3.R)
+gucplant.ttest.AB3BC3.R <- t.test(gucplant$ ABPo3.r, gucplant$BCPo3.r)
+gucplant.ttest.AB3BC3.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB1BC1.R <- aov(gucplant$ ABJ1.r ~ gucplant$BCPo1.r)
-summary(gucplant.ANOVA.AB1BC1.R)
+gucplant.ttest.AB1BC1.R <- t.test(gucplant$ ABPo1.r, gucplant$BCPo1.r)
+gucplant.ttest.AB1BC1.R
 ```
 
 ```{r}
-gucplant.ANOVA.AB1BC2.S <- aov(gucplant$ ABJ1.s ~ gucplant$BCPo2.s)
-summary(gucplant.ANOVA.AB1BC2.S)
+gucplant.ttest.AB1BC2.S <- t.test(gucplant$ ABPo1.s, gucplant$BCPo2.s)
+gucplant.ttest.AB1BC2.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB1BC3.S <- aov(gucplant$ ABJ1.s ~ gucplant$BCPo3.s)
-summary(gucplant.ANOVA.AB1BC2.S)
+gucplant.ttest.AB1BC3.S <- t.test(gucplant$ ABPo1.s, gucplant$BCPo3.s)
+gucplant.ttest.AB1BC3.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB2BC1.S <- aov(gucplant$ ABJ2.s ~ gucplant$BCPo1.s)
-summary(gucplant.ANOVA.AB2BC1.S)
+gucplant.ttest.AB2BC1.S <- t.test(gucplant$ ABPo2.s, gucplant$BCPo1.s)
+gucplant.ttest.AB2BC1.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB2BC2.S <- aov(gucplant$ ABJ2.s ~ gucplant$BCPo2.s)
-summary(gucplant.ANOVA.AB2BC2.S)
+gucplant.ttest.AB2BC2.S <- t.test(gucplant$ ABPo2.s, gucplant$BCPo2.s)
+gucplant.ttest.AB2BC2.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB2BC3.S <- aov(gucplant$ ABJ2.s ~ gucplant$BCPo3.s)
-summary(gucplant.ANOVA.AB2BC3.S)
+gucplant.ttest.AB2BC3.S <- t.test(gucplant$ ABJ2.s, gucplant$BCPo3.s)
+gucplant.ttest.AB2BC3.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB3BC1.S <- aov(gucplant$ ABJ3.s ~ gucplant$BCPo1.s)
-summary(gucplant.ANOVA.AB3BC1.S)
+gucplant.ttest.AB3BC1.S <- t.test(gucplant$ ABJ3.s, gucplant$BCPo1.s)
+gucplant.ttest.AB3BC1.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB3BC2.S <- aov(gucplant$ ABJ3.s ~ gucplant$BCPo2.s)
-summary(gucplant.ANOVA.AB3BC2.S)
+gucplant.ttest.AB3BC2.S <- t.test(gucplant$ ABJ3.s, gucplant$BCPo2.s)
+gucplant.ttest.AB3BC2.S
 ```
 
 ```{r}
-gucplant.ANOVA.AB3BC3.S <- aov(gucplant$ ABJ3.s ~ gucplant$BCPo3.s)
-summary(gucplant.ANOVA.AB3BC3.S)
+gucplant.ttest.AB3BC3.S <- t.test(gucplant$ ABJ3.s, gucplant$BCPo3.s)
+gucplant.ttest.AB3BC3.S
 ```
